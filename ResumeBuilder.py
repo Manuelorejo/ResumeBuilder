@@ -1,5 +1,6 @@
 #This block of code imports the required libraries and dependencies
 import streamlit as st
+import nltk
 from groq import Groq
 from pdfminer.high_level import extract_text
 from nltk.corpus import stopwords
@@ -7,6 +8,9 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 import re
 
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 #This function handles pre-processing of pdfs 
 def pre_processing(pdf_content):
